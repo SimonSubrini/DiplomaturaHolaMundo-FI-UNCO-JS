@@ -1,6 +1,7 @@
 const min = 0;
 const max = 100;
-let estado = ";";
+const maxCont = 10;
+let estado = "";
 
 let dipliNum = Math.floor(Math.random() * (max - min + 1) + min);
 let cont = 0;
@@ -17,8 +18,6 @@ alert(
         " y " +
         max
 );
-
-alert("Num dipli: " + dipliNum);
 
 while (dipliNum != userNum) {
     cont++;
@@ -42,6 +41,10 @@ while (dipliNum != userNum) {
                 estado +
                 " al que eligio dipli"
         );
+    } else {
+        alert("Felicitaciones! Venciste a dipli en " + cont + " intentos");
+    }
+    if (cont >= maxCont) {
+        alert("Felicitaciones!.... A Dipli, porque te vencio");
     }
 }
-alert("Felicitaciones! Venciste a dipli en " + cont + " intentos");
