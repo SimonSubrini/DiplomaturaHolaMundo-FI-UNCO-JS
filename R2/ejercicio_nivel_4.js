@@ -27,7 +27,7 @@ function pentagono(n) {
             P +
             "cm"
     );
-    return P;
+    Pent = P;
 }
 
 function paralelogramo(b, a) {
@@ -45,7 +45,7 @@ function paralelogramo(b, a) {
             P +
             "cm"
     );
-    return P;
+    Para = P;
 }
 
 function rombo(l) {
@@ -59,7 +59,7 @@ function rombo(l) {
             P +
             "cm"
     );
-    return P;
+    Romb = P;
 }
 
 function romboide(l1, l2) {
@@ -77,14 +77,14 @@ function romboide(l1, l2) {
             P +
             "cm"
     );
-    return P;
+    Romboi = P;
 }
 
 function formacion(a_pen, a_par, b_par, a_rombo, a_romboide, b_romboide) {
-    let Pent = pentagono(a_pen);
-    let Para = paralelogramo(a_par, b_par);
-    let Romb = rombo(a_rombo);
-    let Romboi = romboide(a_romboide, b_romboide);
+    pentagono(a_pen);
+    paralelogramo(a_par, b_par);
+    rombo(a_rombo);
+    romboide(a_romboide, b_romboide);
     alert(
         "Formación de custodia: \n" +
             Pent +
@@ -105,7 +105,10 @@ function formacion(a_pen, a_par, b_par, a_rombo, a_romboide, b_romboide) {
     );
 }
 
-//Pent-Para-Rombo-Romb-Romboi-Romb-Romb-Para-Pent
+let Pent = 0;
+let Para = 0;
+let Romb = 0;
+let Romboi = 0;
 
 let a_pen = prompt("Ingrese la longitud de los lados del pentagono: ");
 let a_par = prompt("Ingrese la longitud de uno los lados del paralelogramo : ");
