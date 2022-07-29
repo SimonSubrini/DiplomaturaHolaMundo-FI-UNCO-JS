@@ -1,114 +1,121 @@
 /*  Consigna:
 
-Anakin ha logrado capturar al conde y se dirije de nuevo a
-la república para que lo puedan juzgar. Después de una larga 
-batalla su flota se vio diezmada, el comandante Cody(el usuario) 
-es el encargado de ingresar los datos(parámetros) necesarios para que 
-R2D2 pueda calcular y mostrar las siguientes formaciones de custodia:
+Anakin ha logrado capturar al conde y se dirije de nuevo a la república para 
+que lo puedan juzgar. Después de una larga batalla su flota se vio diezmada, 
+el comandante Cody(el usuario) es el encargado de ingresar los datos(parámetros) 
+necesarios para que R2D2 pueda calcular y mostrar las siguientes formaciones de 
+custodia(Perimetros):
 
-Cuadrado
-Rectangulo
-Triangulo
-Circunferencia
+Pentagono (n*lado donde n es la cantidad de lados)
+Paralelogramo (2* (base+altura))
+Rombo (4 * lado)
+Romboide (2 * (Lado1 + Lado2))
 
-Para este nivel tener en cuenta que los datos necesarios 
-son parámetros de entrada
+Para este nivel tener en cuenta que los datos necesarios son parámetros de entrada. 
+La formacion de custodia esta compuesta por el siguiente orden 
+Pentagono-Paralelogramo-Rombo-Rombo-Romboide-Rombo-Rombo-Paralelogramo-Pentagono.
 */
 
-function Cuadrado(a) {
-    let A = a ** 2;
-    let P = 4 * a;
+function pentagono(n) {
+    let P = 5 * n;
     alert(
-        "Longitud de los lados del cuadrado: " +
-            a +
-            "cm\nArea: A = " +
-            a +
-            "^2 = " +
-            A +
-            "cm^2\nPerimetro: P = 4*" +
-            a +
+        "Longitud de los lados del pentagono: " +
+            n +
+            "cm\n\nPerimetro: P = 5*" +
+            n +
             " = " +
             P +
             "cm"
     );
+    return P;
 }
-function Rectangulo(a, b) {
-    let A = a * b;
-    let P = 2 * a + 2 * b;
+
+function paralelogramo(b, a) {
+    let P = 2 * (Number(b) + Number(a));
     alert(
-        "Longitud de los lados del rectangulo: " +
-            a +
-            "cm, " +
+        "Longitud de los lados del paralelogramo: " +
             b +
-            "cm\nArea: A = " +
+            "cm y " +
             a +
-            "*" +
+            "cm\n\nPerimetro: P = 2*(" +
             b +
-            " = " +
-            A +
-            "cm^2\nPerimetro: P = 2*" +
-            a +
-            "+2*" +
-            b +
-            " = " +
-            P +
-            "cm"
-    );
-}
-function Triangulo(a, b) {
-    let A = (a * b) / 2;
-    let P =
-        parseFloat(a) + parseFloat(b) + parseFloat(Math.sqrt(a ** 2 + b ** 2));
-    alert(
-        "Longitud de los catetos del triangulo: " +
-            a +
-            "cm, " +
-            b +
-            "cm\nArea: A = " +
-            a +
-            "*" +
-            b +
-            "/2 = " +
-            A +
-            "cm^2\nPerimetro: P = " +
-            a +
             "+" +
-            b +
-            "+sqrt(" +
             a +
-            "^2+" +
-            b +
-            "^2) = " +
+            ") = " +
             P +
             "cm"
     );
+    return P;
 }
-function Circulo(r) {
-    let A = Math.PI * r ** 2;
-    let P = 2 * Math.PI * r;
+
+function rombo(l) {
+    let P = 4 * l;
     alert(
-        "Radio del circulo: " +
-            r +
-            "cm\nArea: A = pi*" +
-            r +
-            "^2 = " +
-            A +
-            "cm^2\nPerimetro: P = 2*pi*" +
-            r +
+        "Longitud de los lados del rombo: " +
+            l +
+            "cm\n\nPerimetro: P = 4*" +
+            l +
             " = " +
             P +
             "cm"
     );
+    return P;
 }
 
-let a_Cu = prompt("Ingrese la longitud de los lados del cuadrado: ");
-let a_R = prompt("Ingrese la longitud de uno los lados del rectangulo: ");
-let b_R = prompt("Ingrese la longitud del otro de los lados del rectangulo: ");
-let a_T = prompt("Ingrese la longitud de uno los lados del triangulo: ");
-let b_T = prompt("Ingrese la longitud del otro de los lados del triangulo: ");
-let r_Ci = prompt("Ingrese el radio del circulo: ");
+function romboide(l1, l2) {
+    let P = 2 * (Number(l1) + Number(l2));
+    alert(
+        "Longitud de los lados del romboide: " +
+            l1 +
+            "cm y " +
+            l2 +
+            "cm\n\nPerimetro: P = 2*(" +
+            l1 +
+            "+" +
+            l2 +
+            ") = " +
+            P +
+            "cm"
+    );
+    return P;
+}
 
-Cuadrado(a_Cu);
-Rectangulo(a_R, b_R);
-Triangulo(a_T, b_T);
-Circulo(r_Ci);
+function formacion(a_pen, a_par, b_par, a_rombo, a_romboide, b_romboide) {
+    let Pent = pentagono(a_pen);
+    let Para = paralelogramo(a_par, b_par);
+    let Romb = rombo(a_rombo);
+    let Romboi = romboide(a_romboide, b_romboide);
+    alert(
+        "Formación de custodia: \n" +
+            Pent +
+            " - " +
+            Para +
+            " - " +
+            Romb +
+            " - " +
+            Romb +
+            " - " +
+            Romboi +
+            " - " +
+            Romb +
+            " - " +
+            Para +
+            " - " +
+            Pent
+    );
+}
+
+//Pent-Para-Rombo-Romb-Romboi-Romb-Romb-Para-Pent
+
+let a_pen = prompt("Ingrese la longitud de los lados del pentagono: ");
+let a_par = prompt("Ingrese la longitud de uno los lados del paralelogramo : ");
+let b_par = prompt(
+    "Ingrese la longitud del otro de los lados del paralelogramo: "
+);
+let a_rombo = prompt("Ingrese la longitud de los lados del rombo: ");
+let a_romboide = prompt("Ingrese la longitud de uno los lados del romboide : ");
+let b_romboide = prompt(
+    "Ingrese la longitud del otro de los lados del romboide: "
+);
+
+formacion(a_pen, a_par, b_par, a_rombo, a_romboide, b_romboide);
