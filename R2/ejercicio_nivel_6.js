@@ -13,6 +13,10 @@ function a_Circulo(r) {
     return area;
 }
 
+function calculoCosto(area) {
+    return 200 * area;
+}
+
 let bColumn1 = Number(prompt("Ingrese la base de la columna izquierda: "));
 let hColumn1 = Number(prompt("Ingrese la altura de la columna izquierda: "));
 let bColumn2 = Number(prompt("Ingrese la base de la columna derecha: "));
@@ -40,4 +44,6 @@ let areaTotal =
             100
     ) / 100;
 
-alert("Área total: " + areaTotal);
+let costoTotal = calculoCosto(areaTotal);
+
+alert("Área total: " + areaTotal + "\nCosto total: " + costoTotal);
