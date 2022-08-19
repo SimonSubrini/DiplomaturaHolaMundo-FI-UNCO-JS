@@ -52,6 +52,7 @@ function dipliGame(cont, dipliNum) {
             "\nFallaste por " +
             dif
     );
+    cont=cont+1;
 }
 
 // ---------------------------- variable initialization
