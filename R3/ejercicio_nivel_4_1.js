@@ -1,39 +1,19 @@
-//funcion que nos brinda información de un año
-function datosAnio(anio, dias) {
-    let biciesto = false;
-    if (dias !== 365) {
-        biciesto = true;
+function evaluateNote1(note) {
+    let txt;
+    if (note > 5) {
+        txt = "Examen aprobado";
+    } else {
+        txt = "Examen desaprobado";
     }
-    return biciesto;
+    return txt;
 }
 
-function everOrOdd(anio, dias) {
-    let eOO = -1;
-    if (!datosAnio(anio, dias)) {
-        if (anio % 2 == 0) {
-            eOO = 2;
-        } else {
-            eOO = 1;
-        }
-    }
-    return eOO;
+function evaluateNote2(note) {
+    return note > 5 ? "Examen aprobado" : "Examen desaprobado";
 }
 
-let anio = Number(prompt("Ingresá un año:"));
-let dias = Number(
-    prompt("Ingresá la cantidad de días que tiene el año " + anio + ":")
-);
-let biciesto = datosAnio(anio, dias);
-if (biciesto) {
-    alert("El año " + anio + " es biciesto.");
-} else {
-    alert("El año " + anio + " no es biciesto.");
-}
-let eOO = everOrOdd(anio, dias);
-if (eOO == -1) {
-    alert("El año es biciesto.");
-} else if (eOO == 1) {
-    alert("El año no es biciesto y es impar.");
-} else {
-    alert("El año no es biciesto y es par.");
-}
+let note = prompt("Ingrese su nota: ");
+
+alert(evaluateNote1(note));
+
+alert(evaluateNote2(note));

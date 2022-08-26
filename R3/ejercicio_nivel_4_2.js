@@ -1,29 +1,16 @@
-// funcion que nos da un mensaje informando sobre una letra
-function analizarLetra(letra) {
-    let letNorm = letra.toUpperCase();
-    let letraA = letNorm === "A";
-    let letraE = letNorm === "E";
-    let letraI = letNorm === "I";
-    let letraO = letNorm === "O";
-    let letraU = letNorm === "U";
-    let letraVocal = letraA || letraE || letraI || letraO || letraU;
-    if (letraVocal) {
-        let esMayuscula = letNorm === letra;
-        if (esMayuscula) {
-            //verificamos si la vocal es mayúscula
-            alert("La letra " + letra + " es una vocal mayúscula");
-        } else {
-            alert("La letra " + letra + " es una vocal minúscula");
-        }
+function condition(note1, note2, note3) {
+    let prom = Math.round((note1 + note2 + note3) / 0.03) / 100;
+    let txt = "Nota promedio: " + prom + "\n   ";
+    if (prom >= 8) {
+        txt += "Materia promocionada";
     } else {
-        alert("La letra " + letra + " es una consonante");
+        txt += "Materia NO promocionada";
     }
+    return txt;
 }
 
-// ----------- acá comienza nuestro código principal ----------------------------
+let note1 = Number(prompt("Ingrese su nota n° 1"));
+let note2 = Number(prompt("Ingrese su nota n° 2"));
+let note3 = Number(prompt("Ingrese su nota n° 3"));
 
-// ingresamos una letra
-let letra = prompt(
-    "ingresa una letra para enviar por parámetro a la función analizarLetra:"
-);
-analizarLetra(letra);
+alert(condition(note1, note2, note3));
