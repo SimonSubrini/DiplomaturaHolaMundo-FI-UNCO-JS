@@ -17,7 +17,7 @@ se le deberá informar que la opción es incorrecta.
 */
 
 function call(option) {
-    let txt="Usted ingreso la opción ";
+    let txt = "Usted ingreso la opción --> ";
     switch (option) {
         case 1:
             txt += "Valor de su última factura.";
@@ -43,4 +43,4 @@ function call(option) {
     return txt;
 }
 
-alert(call(Number(prompt("Ingrese un número: ")));
+alert(call(Number(prompt("Ingrese un número: "))));
