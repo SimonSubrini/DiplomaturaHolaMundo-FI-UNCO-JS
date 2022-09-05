@@ -27,12 +27,18 @@ function call(option) {
             break;
         case 3:
             txt += "Comunicarse con gestion de ventas.";
+            txt +=
+                "En instantes será atendido por uno de nuestros representantes en ventas.";
             break;
         case 4:
             txt += "Comunicarse con un operador de atención al cliente.";
+            txt +=
+                "En instantes será atendido por uno de nuestros representantes de atención al cliente.";
             break;
         case 5:
             txt += "Comunicarse con un operador de soporte técnico.";
+            txt +=
+                "En instantes será atendido por uno de nuestros representantes de soporte técnico.";
             break;
         case 0:
             txt += "Terminar la llamada.";
