@@ -27,7 +27,7 @@ function cambiarFondo(color) {
 let color = prompt(
     "Ingrese un color según:\ngreen => se verá en verde\nred => se verá en roj\nblue => se verá en azul\nyellow = > se verá en color amarillo"
 );
-color = color.toLowerCase();
+//color = color.toLowerCase();
 if (
     color === "green" ||
     color === "red" ||
