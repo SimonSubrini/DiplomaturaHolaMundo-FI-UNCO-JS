@@ -84,6 +84,17 @@ function newGame() {
     cont = cont + 1;
     userNum = numberRequest();
     result = dipliGame(dipliNum, userNum);
+    if (!result && cont <= 3) {
+        loserMsg();
+        newGame();
+    } else {
+        if (result) {
+            winnerMsg();
+        } else {
+            loserMsg();
+            return;
+        }
+    }
 }
 
 function loserMsg() {
@@ -124,20 +135,3 @@ showInstructions();
 dipliNum = gameKind();
 
 newGame();
-if (result === true) {
-    winnerMsg();
-} else {
-    loserMsg();
-    newGame();
-    if (result === true) {
-        winnerMsg();
-    } else {
-        loserMsg();
-        newGame();
-        if (result === true) {
-            winnerMsg();
-        } else {
-            loserMsg();
-        }
-    }
-}
